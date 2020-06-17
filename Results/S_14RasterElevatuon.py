@@ -1,9 +1,9 @@
 import arcpy
 arcpy.env.overwriteOutput = True
-inputFc = r"D:\python_project\PC_project\S_arcPy\S_14\Programming_in_GIS_2020_L9_s14\rec_sites.shp"
-rasterElevation = r"D:\python_project\PC_project\S_arcPy\S_14\Programming_in_GIS_2020_L9_s14\elevation"
-resultFile = r"D:\python_project\PC_project\S_arcPy\S_14\Programming_in_GIS_2020_L9_s14\Results\rec_sites.shp"
-newFields = 'HEIGHT'
+inputFc = arcpy.GetParameterAsText(0)
+rasterElevation = arcpy.GetParameterAsText(1)
+resultFile = arcpy.GetParameterAsText(2)
+newFields = arcpy.GetParameterAsText(3)
 
 arcpy.CopyFeatures_management(inputFc, resultFile)
 arcpy.AddMessage("New shape file was created")
